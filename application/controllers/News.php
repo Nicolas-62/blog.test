@@ -5,7 +5,7 @@ class News extends CI_Controller {
         {
                 parent::__construct();
                 $this->load->model('news_model');
-                $this->load->helper('url_helper'); // la fonction site_url présente dans les vues pour les liens hypertexte appartient à cet helper.
+                $this->load->helper('url_helper');
                 $this->load->helper('assets');
                 $this->load->helper('tools');
                 $this->load->library('messages');
@@ -14,12 +14,8 @@ class News extends CI_Controller {
 
         public function index()
         {
-                // redirect('news/redirection'); // Essai redirection voir methode "redirection" plus bas.
-                $data['news'] = $this->news_model->get_news();
-                $data['message'] = $this->messages->recuperer_message(); // Essai création d'une bibliothèque.
-                
+                $data['news'] = $this->news_model->get_news();         
                 $data['session'] = $this->session->userdata();
-
                 $data['title'] = 'Liste des news';
                 
                 $this->load->view('templates/header', $data);
@@ -35,8 +31,6 @@ class News extends CI_Controller {
                         show_404();
                 }
                 $data['title'] = $data['news_item']['title'];
-                $data['news_item']['date'] = $this->change_date_model->change_date($data['news_item']['date']); 
-                // changer la date à partir du modèle correspondant.
 
                 $this->load->view('templates/header', $data);
                 $this->load->view('news/view', $data);
