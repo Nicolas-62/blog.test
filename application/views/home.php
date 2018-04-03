@@ -20,22 +20,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div  id ="corps" class="container-fluid">
 	<div class="row mt-4">
 		<div class="col-lg-4">
-			<div class="card mb-1">
+			<div class="card mb-5">
 				<div class="card-header">
 					Mon projet de Formation
 				</div>
-				<div class="card-body" id="carte_gauche">
 					<div class="embed-responsive embed-responsive-4by3">
 						<iframe class="embed-responsive-item" src="https://www.locationsvoiture.fr"></iframe>
 					</div> 
-				</div>
 				<div class="card-footer">
-					<a href="https://www.locationsvoiture.fr">Voir sur : locationsvoiture.fr</a>
+					<a href="https://www.locationsvoiture.fr" target="_blank">Voir sur : locationsvoiture.fr</a>
 				</div>
 			</div>
 		</div>
 		<div class="col-lg-4">
-			<div class="card mb-1">
+			<div class="card mb-5">
 				<div class="card-header">
 					Mon projet avec <a href="https://www.codeigniter.com/" >CodeIgniter</a>
 				</div>
@@ -48,7 +46,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
 		</div>
 		<div class="col-lg-4">
-			<div class="card mb-1">
+			<div class="card mb-5">
 				<div class="card-header">
 					Mon CV 
 				</div>

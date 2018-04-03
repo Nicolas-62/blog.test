@@ -12,12 +12,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </head>
 <body>
 	<header>
-		 <nav class="navbar navbar-expand-sm fixed-top bg-light" id="nav"> 		
+		 <nav class="navbar fixed-top bg-light" id="nav">
 		 	<?php
 			if (!empty($_SESSION['pseudo'])){ 
 			?>
 
-			<div class="col-lg-4">					
+			<div class="col-lg-3">					
 				<a class="btn btn-danger mr-3" href="<?php echo site_url('user/disconnect'); ?>" role="button">Déconnexion</a>
 				<em>Bienvenue <?= $_SESSION['pseudo'] ?></em>
 			</div>
@@ -26,7 +26,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			}else { 
 			?>
 
-			<div class="col-lg-4">
+			<div class="col-lg-3">
 				<a class="btn btn-primary" href="<?php echo site_url('user'); ?>" role="button">Connexion</a>
 			</div>
 
@@ -34,9 +34,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			} 
 			?>
 
-			<div class="col-lg-4">
-				<div id="titre">Le Blog de Nico</div>
+			<div class="col-lg-offset-2 col-lg-3 ">
+				<div id="titre_blog">Le Blog de Nico</div>
 			</div>
+			<div class="col-lg-offset-2 col-lg-2 ">
+				<div id="lien_accueil"><a href="<?php echo site_url(''); ?>">Retour à l'accueil</a></div>
 		 </nav>
 	</header>
 	<div class="container p-3">

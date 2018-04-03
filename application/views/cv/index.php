@@ -14,6 +14,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<title>CV de Nicolas Lourdel</title>
 	</head>
 	<body>
+		<a  id="lien_accueil" href="<?php echo site_url(''); ?>">Retour à l'accueil</a>
 		<div id="bloc_page">
 			<aside>
 				<img id="ma_photo" src="./assets/images/cv_images/photo_CV_essai.jpg"  
@@ -40,8 +41,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					</div>
 					<div id="web">
 						<h3>SUR LE WEB</h3>
-							<li><a href="https://www.locationsvoiture.fr" target="_blank">  Mon projet de site web  </a></li>
-							<li><a href="https://github.com/Nicolas-62/cnam_car_dev" target="_blank">  Le dépôt du projet  </a></li>			
+							<li><a href="https://www.nlmonsite.ovh" target="_blank">  Mes projets de site Web  </a></li>
+							<li><a href="https://github.com/Nicolas-62" target="_blank"> Mes dépots GitHub </a></li>			
 					</div>
 					<div id="environnement">
 						<h3>ENVIRONNEMENT</h3>
@@ -56,7 +57,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							</tr>
 							<tr>
 								<td class="first_cell">PHP</td>
-								<td>Silex</td>
+								<td>Silex, CodeIgniter</td>
 							</tr>
 							<tr>
 								<td class="first_cell">JAVA</td>
