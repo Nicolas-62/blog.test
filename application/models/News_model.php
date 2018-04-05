@@ -34,7 +34,11 @@ class News_model extends CI_Model {
         'author' => $this->input->post('author')
 
     );
-
     return $this->db->insert('news', $data);
 	}
+    
+    public function delete_news($label)
+    {
+       return $this->db->delete('news', array('label' => $label));
+    }
 }
