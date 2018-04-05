@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<meta charset="utf-8">
 	<title>Bienvenue</title>
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="./assets/css/home.css">
+	<link rel="stylesheet" type="text/css" href="<?= css_url('home') ?>">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet"> 
@@ -41,7 +41,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<iframe class="embed-responsive-item" src="/news"></iframe>
 				</div> 
 				<div class="card-footer">
-					<a href="/news">Voir</a>
+					<?= url('Voir', 'news') ?>
 				</div>
 			</div>
 		</div>
@@ -54,12 +54,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<iframe class="embed-responsive-item" src="/cv"></iframe>
 				</div>
 				<div class="card-footer">
-					<a href="/cv">Voir</a>
+					<?= url('Voir', 'cv') ?>
 				</div> 
 			</div>
 		</div>
 	</div>
 </div>
   <script src="./assets/javascript/home.js"></script>  
+  <script src="<?= js_url('home') ?>"></script>  
 </body>
 </html>
