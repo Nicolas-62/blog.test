@@ -24,11 +24,13 @@ class News_model extends CI_Model {
 
     $label = url_title($this->input->post('title'), 'dash', TRUE); 
     //  url_title permet l'usage de la donnée en URL : dash transforme les espaces en tirets et TRUE force la passage des caractères en minuscule.
+    $comment = $this->input->post('comment');
+    $comment = preg_replace('#https://[a-z0-9._/-]+#i', '<a href="$0">$0</a>', $comment);
 
     $data = array(
         'title' => $this->input->post('title'),
         'label' => $label,
-        'comment' => $this->input->post('comment'),
+        'comment' => $comment,
         'author' => $this->input->post('author')
 
     );
