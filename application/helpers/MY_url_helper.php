@@ -19,9 +19,9 @@ if ( ! function_exists('url'))
 	{
 		if( ! is_array($uri))
 		{
-			//	Suppression de la variable $text
+			
 			$uri = func_get_args();
-			array_shift($uri);
+			array_shift($uri); //	Suppression de la variable $text ( $text : 1ere entrée du tableau qui vient d'être créé)
 		}
 	
 		echo '<a href="' . site_url($uri) . '">' . htmlentities($text) . '</a>';
