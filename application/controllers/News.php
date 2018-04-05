@@ -5,11 +5,8 @@ class News extends CI_Controller {
     {
         parent::__construct();
         $this->load->model('news_model');
-        $this->load->helper('url_helper');
-        $this->load->helper('assets');
-        $this->load->helper('tools');
-        $this->load->library('messages');
-        $this->load->library('session');
+        $this->load->helper(array('url_helper', 'assets', 'tools'));
+        $this->load->library(array('messages', 'session'));
     }
 
     public function index()
@@ -47,8 +44,12 @@ class News extends CI_Controller {
 
         $data['title'] = 'Ajouter un article';
 
-        $this->form_validation->set_rules('title', 'Titre', 'required');
-        $this->form_validation->set_rules('comment', 'Commentaire', 'required');
+        $this->form_validation->set_rules('title', 'Titre', 'required',
+                array('required' => 'Vous devez renseigner un %s.')
+        );
+        $this->form_validation->set_rules('comment', 'Commentaire', 'required',
+              array('required' => 'De quoi voulez vous parler ?')
+        );
 
         if ($this->form_validation->run() === FALSE)
         {

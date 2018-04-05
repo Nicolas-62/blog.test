@@ -1,16 +1,18 @@
 <div class="cotainer-fluid">
-	<?= validation_errors() ?>
+	<!-- <?= validation_errors() ?> -->
 	<?= form_open('news/create') ?>
 		<fieldset>
 			<legend><?= $title ?></legend>
 				<div class="form-group">
 				    <label for="title">Titre :</label>
-				    <input class="form-control" type="input" name="title" id="title" />
+				    <input class="form-control" type="input" name="title" id="title" value="<?php echo set_value('title'); ?>" />
+				    <?php echo form_error('title'); ?>
 				    <br>
 				</div>
 				<div class="form-group">
 					<label for="comment">Commentaire :</label><br>
-					<textarea class="form-control" rows="5" name="comment" id="comment"></textarea>
+					<textarea class="form-control" rows="5" name="comment" id="comment" value="<?php echo set_value('comment'); ?>"></textarea>
+					<?php echo form_error('comment'); ?>
 				</div> 
 			    <input type="hidden" name="author" value="<?= $_SESSION['pseudo'] ?>" />
 			    <br>

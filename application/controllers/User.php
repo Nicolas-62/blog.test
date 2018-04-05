@@ -6,18 +6,12 @@ class User extends CI_Controller {
 	{
         	parent::__construct();
         	$this->load->model('user_model');
-                $this->load->helper('url_helper');
-                $this->load->helper('assets');
-                $this->load->helper('tools');
-                $this->load->helper('form');
-                $this->load->library('messages');
-                $this->load->library('session');
-                $this->load->library('form_validation');
+                $this->load->helper(array('url_helper', 'assets', 'tools', 'form'));
+                $this->load->library(array('messages', 'session', 'form_validation'));
 	}
 
 	public function index()
 	{	
-
                 $data['title'] = 'Identification';
                 $data['messages'] = FALSE;
                 $data['form'] = TRUE;
