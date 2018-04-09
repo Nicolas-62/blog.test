@@ -6,7 +6,7 @@ class News extends CI_Controller {
         parent::__construct();
         $this->load->model('news_model');
         $this->load->helper(array('url_helper', 'assets', 'tools'));
-        $this->load->library(array('messages', 'session'));
+        $this->load->library(array('messages'));
     }
 
     public function index()
