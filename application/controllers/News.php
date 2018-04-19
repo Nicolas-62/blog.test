@@ -1,19 +1,27 @@
 <?php
 class News extends CI_Controller {
 
+    const NB_COMMENT_PER_PAGE = 5;
+
     public function __construct()
     {
         parent::__construct();
         $this->load->model('news_model');
         $this->load->helper(array('url_helper', 'assets', 'tools'));
-        $this->load->library(array('messages'));
+        $this->load->library(array('messages', 'pagination'));
     }
 
-    public function index()
+    public function index($nb_comment = 0)
     {
-        $data['news'] = $this->news_model->get_news();         
-        $data['session'] = $this->session->userdata();
+        $data['news'] = $this->news_model->get_news(self::NB_COMMENT_PER_PAGE, $nb_comment);         
+        $data['session'] = $this->session->userdata(); // permet d'afficher les données de la session dans un var_dump.
         $data['title'] = 'Liste des news';
+
+        $config['base_url'] = 'http://codeigniter.test/news/index/';
+        $config['total_rows'] = $this->news_model->count_news();
+        $config['per_page'] = self::NB_COMMENT_PER_PAGE;
+
+        $this->pagination->initialize($config);
         
         $this->load->view('templates/header', $data);
         $this->load->view('news/index', $data);
@@ -21,7 +29,7 @@ class News extends CI_Controller {
     }
     public function view($label = NULL)
     {
-        $data['news_item'] = $this->news_model->get_news($label);
+        $data['news_item'] = $this->news_model->get_one_news($label);
 
         if (empty($data['news_item']))
         {

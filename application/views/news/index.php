@@ -1,6 +1,7 @@
 <h3><?= $title ?></h3>
 	<p><a href="<?php echo site_url('news', 'create'); ?>">Ajoutez un article si vous êtes connecté !</a></p>
 <?php 
+echo $this->pagination->create_links();
 foreach ($news as $news_item): 
 ?>
 	<div class="card mb-4">
@@ -26,5 +27,7 @@ foreach ($news as $news_item):
 			</div>
 		</div>
 	</div>
-<?php endforeach; ?>
+<?php endforeach; 
+echo $this->pagination->create_links(); 
+?>
 
