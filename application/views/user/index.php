@@ -6,7 +6,7 @@ if($form == TRUE):
 ?>
 	<h4>Identification / Nouveau compte</h4>
 	<!-- <?= validation_errors() ?> -->
-	<?= form_open('user/connect') ?>
+	<?= form_open('user') ?>
 	<div class="form-group">
 	    <label class="control-label col-sm-2" for="pseudo">Votre pseudo</label>
 		<div class="col-sm-10">

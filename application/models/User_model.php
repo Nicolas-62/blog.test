@@ -14,17 +14,12 @@ class User_model extends CI_Model {
 	        'pseudo' => $pseudo,
 	        'password' => $password,
 	    	);
-	    	$this->db->insert('users', $data); 
-            return $pseudo;
+	    	$this->db->insert('users', $data);            
     	}
     	elseif(password_verify($this->input->post('password'), $data['password']) === FALSE)
     	{
     		$pseudo = TRUE;
-            return $pseudo;
 		}
-		else
-		{
-			return $pseudo; 	
-		}   	   	  	
+        return $pseudo;  	   	  	
 	}
 }

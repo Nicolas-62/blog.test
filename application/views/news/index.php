@@ -1,7 +1,9 @@
 <h3><?= $title ?></h3>
 	<p><a href="<?php echo site_url('news', 'create'); ?>">Ajoutez un article si vous êtes connecté !</a></p>
 <?php 
-echo $this->pagination->create_links();
+echo $this->benchmark->elapsed_time('code_start', 'code_end') . '</br>'; 
+echo $this->pagination->create_links() . '</br>'; 
+var_dump($session) . '</br>'; 
 foreach ($news as $news_item): 
 ?>
 	<div class="card mb-4">
