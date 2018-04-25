@@ -14,11 +14,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<header>
 		 <nav class="navbar fixed-top bg-light" id="nav">
 		 	<?php
-			if (!empty($_SESSION['pseudo'])){ 
+			if (isset($_SESSION['pseudo'])){ 
 			?>
 
 			<div class="col-lg-3">					
-				<a class="btn btn-danger mr-3" href="<?php echo site_url('user/disconnect'); ?>" role="button">Déconnexion</a>
+				<a class="btn btn-danger mr-3" href="<?php echo site_url('user/logout'); ?>" role="button">Déconnexion</a>
 				<em>Bienvenue <?= $_SESSION['pseudo'] ?></em>
 			</div>
 
@@ -27,7 +27,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			?>
 
 			<div class="col-lg-3">
-				<a class="btn btn-primary" href="<?php echo site_url('user'); ?>" role="button">Connexion</a>
+				<a class="btn btn-primary" href="<?php echo site_url('user/signup'); ?>" role="button">Connexion</a>
 			</div>
 
 			<?php

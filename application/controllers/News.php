@@ -9,16 +9,16 @@ class News extends CI_Controller {
         $this->load->model('news_model');
         $this->load->helper(array('url_helper', 'assets', 'tools'));
         $this->load->library(array('messages', 'pagination'));
-        $this->output->enable_profiler(true);
+        // $this->output->enable_profiler(true);
     }
 
     public function index($nb_comment = 0)
     {
         
 
-        $this->benchmark->mark('code_start');
+        // $this->benchmark->mark('code_start');
         $data['news'] = $this->news_model->get_news(self::NB_COMMENT_PER_PAGE, $nb_comment); 
-        $this->benchmark->mark('code_end');    
+        // $this->benchmark->mark('code_end');    
 
         $data['session'] = $this->session->userdata(); // permet d'afficher les données de la session dans un var_dump.
         $data['title'] = 'Liste des news';
@@ -49,7 +49,7 @@ class News extends CI_Controller {
     }
     public function create()
     {
-        if ($_SESSION['pseudo'] == FALSE)
+        if ($_SESSION['pseudo'] === NULL)
         {
                 redirect('user');
         }
@@ -84,7 +84,7 @@ class News extends CI_Controller {
     }
     public function delete($label = NULL)
     {
-        if ($_SESSION['pseudo'] == FALSE)
+        if ($_SESSION['pseudo'] === NULL)
         {
                 redirect('user');
         }
